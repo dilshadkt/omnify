@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+import { DM_Sans } from "next/font/google";
+import "./globals.css";
+import Sidebar from "./components/Sidebar";
+import { MyProvider } from "./context/context";
+const dn_sans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +18,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={dn_sans.className}>
+        <MyProvider>
+          <main className="flex bg-blue-50 h-screen overflow-hidden text-[#334155]">
+            <Sidebar />
+            <div className="h-full w-full  px-2 pt-2 pb-6 flex-1 overflow-hidden  ">
+              {children}
+            </div>
+          </main>
+        </MyProvider>
+      </body>
     </html>
   );
 }
