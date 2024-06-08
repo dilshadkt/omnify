@@ -12,6 +12,7 @@ import FilteTable from "./components/FilteTable";
 export default function Home() {
   const { isEditOpen, setIsEditOpen, isFilterOpne, setIsFilteOpen } =
     useContext(MyContext);
+
   return (
     <section className="h-full w-full flex flex-col bg-white rounded-md overflow-hidden">
       <div className="h-14 flexStart px-4 bold-20">Waitlist</div>
