@@ -429,11 +429,11 @@ export const filterboxNav = [
     icon: "/calender.svg",
   },
   {
-    title: "People ",
+    title: "People",
     icon: "/users.svg",
   },
   {
-    title: "Services / Products ",
+    title: "Services / Products",
     icon: "/dashboard.svg",
   },
 ];

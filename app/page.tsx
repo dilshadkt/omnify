@@ -16,7 +16,9 @@ export default function Home() {
   return (
     <section className="h-full w-full flex flex-col bg-white rounded-md overflow-hidden">
       <div className="h-14 flexStart px-4 bold-20">Waitlist</div>
-      <div className="px-4 py-3 flex justify-between flex-col ">
+      <div className="relative px-4 py-3 flex justify-between flex-col ">
+        {isFilterOpne && <FilteTable />}
+        {isEditOpen && <EditColumn />}
         <div className="grid grid-cols-3  gap-3  w-full">
           <div className="py-[10px] bold-12 border border-gray-100 rounded-md px-3 flexStart">
             All Waitlists{" "}
@@ -93,9 +95,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className=" my-3 mx-4 h-full overflow-hidden  relative flex  ">
-        {isEditOpen && <EditColumn />}
-        {isFilterOpne && <FilteTable />}
+      <div className=" my-3 mx-4 h-full overflow-y-auto  relative flex  ">
         <div className="  overflow-x-auto w-full    rounded-md border-gray-100">
           <table className="table  border border-gray-100 rounded-md">
             {/* head */}

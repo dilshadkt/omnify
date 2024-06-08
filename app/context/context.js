@@ -7,6 +7,7 @@ const MyProvider = ({ children }) => {
   const [value, setValue] = useState("Hello from context!");
   const [isEditOpen, setIsEditOpen] = useState(false);
   const [isFilterOpne, setIsFilteOpen] = useState(false);
+  const [selected, setSelected] = useState([]);
 
   const data = {
     isEditOpen,
@@ -15,6 +16,8 @@ const MyProvider = ({ children }) => {
     setValue,
     isFilterOpne,
     setIsFilteOpen,
+    selected,
+    setSelected,
   };
 
   return <MyContext.Provider value={data}>{children}</MyContext.Provider>;

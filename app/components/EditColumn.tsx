@@ -11,7 +11,7 @@ const EditColumn = () => {
   });
 
   return (
-    <section className="w-[320px] h-[472px] shadow-lg bg-white top-0 right-0 z-50 flex flex-col  border border-gray-100 rounded-md p-4 absolute">
+    <section className="w-[320px] h-[472px] shadow-lg bg-white top-28 right-0 z-50 flex flex-col  border border-gray-100 rounded-md p-4 absolute">
       <div>
         <h4 className="medium-16 text-black">Edit Columns</h4>
         <h5 className="regular-14 text-gray-400 mt-2">

@@ -7,11 +7,13 @@ import "react-datepicker/dist/react-datepicker.css";
 import Button from "./shared/Button";
 import SheduledDate from "./SheduledDate";
 import People from "./People";
+import Service from "./Service";
 
 const FilteTable = () => {
   const [selected, setSelected] = useState("Scheduled Date");
+
   return (
-    <section className="absolute z-50 border border-gray-100 rounded-md w-[672px]  bg-red-200 shadow-lg flex flex-col">
+    <section className="absolute z-50 border top-28 border-gray-100 rounded-md w-[672px]  bg-red-200 shadow-lg flex flex-col">
       <div className="h-[348px] flex ">
         <div className="max-w-[230px] border-r border-gray-100  w-full bg-blue-50 h-full p-2">
           <ul className="w-full ">
@@ -36,7 +38,13 @@ const FilteTable = () => {
         </div>
         <div className="flex-1  bg-white  p-4">
           {/* HERE THE CONTENT WILL CHANGE BASEED ON THE SELECTION  */}
-          {selected === "Scheduled Date" ? <SheduledDate /> : <People />}
+          {selected === "Scheduled Date" ? (
+            <SheduledDate />
+          ) : selected === "People" ? (
+            <People />
+          ) : (
+            <Service />
+          )}
         </div>
       </div>
       <div className="h-[52px] border-t border-gray-100 bg-white flexEnd py-2">
