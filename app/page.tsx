@@ -17,8 +17,8 @@ export default function Home() {
     <section className="h-full w-full flex flex-col bg-white rounded-md overflow-hidden">
       <div className="h-14 flexStart px-4 bold-20">Waitlist</div>
       <div className="relative px-4 py-3 flex justify-between flex-col ">
-        {isFilterOpne && <FilteTable />}
-        {isEditOpen && <EditColumn />}
+        {isFilterOpne && <FilteTable setfilterOpen={setIsFilteOpen} />}
+        {isEditOpen && <EditColumn setIsEditOpen={setIsEditOpen} />}
         <div className="grid grid-cols-3  gap-3  w-full">
           <div className="py-[10px] bold-12 border border-gray-100 rounded-md px-3 flexStart">
             All Waitlists{" "}

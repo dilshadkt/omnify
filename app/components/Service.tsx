@@ -3,6 +3,8 @@ import Image from "next/image";
 import React, { useState } from "react";
 import SearchBox from "./shared/SearchBox";
 import { useForm } from "react-hook-form";
+import DropDown from "./shared/DropDown";
+import { tableData } from "@/constants";
 
 const Service = () => {
   const { register, watch } = useForm({
@@ -10,6 +12,10 @@ const Service = () => {
       type: "name",
     },
   });
+  const services = new Set(tableData.map((item) => item.service));
+  const servicesArray = Array.from(services);
+  const types = new Set(tableData.map((item) => item.status));
+  const typeArray = Array.from(types);
 
   return (
     <section>
@@ -36,7 +42,16 @@ const Service = () => {
       {watch().type === "name" ? (
         <SearchBox placeholder={"Search service name"} />
       ) : (
-        <div></div>
+        <div className="flex flex-col gap-5 mt-5">
+          <div>
+            <h5 className="medium-12 mb-1">Service type</h5>
+            <DropDown values={servicesArray} />
+          </div>
+          <div>
+            <h5 className="medium-12 mb-1">Service type</h5>
+            <DropDown values={typeArray} />
+          </div>
+        </div>
       )}
     </section>
   );

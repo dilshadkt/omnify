@@ -32,7 +32,7 @@ export const tableData = [
     status: "lead",
     email: "theodore@gmail.com",
     phone: "+966559186876",
-    service: "Private Language Session",
+    service: "Appointment Session",
     scheduled: {
       day: "Sun,",
       date: "07 Jan 2024 ",
@@ -49,7 +49,7 @@ export const tableData = [
     status: "active",
     email: "higgins@gmail.com",
     phone: "+966559186877",
-    service: "Group Language Session",
+    service: "Fitness Session",
     scheduled: {
       day: "Mon,",
       date: "08 Jan 2024 ",
@@ -83,7 +83,7 @@ export const tableData = [
     status: "lead",
     email: "rick@gmail.com",
     phone: "+966559186879",
-    service: "Group Language Session",
+    service: "Fitness Session",
     scheduled: {
       day: "Wed,",
       date: "10 Jan 2024 ",
@@ -100,7 +100,7 @@ export const tableData = [
     status: "active",
     email: "orville@gmail.com",
     phone: "+966559186880",
-    service: "Private Language Session",
+    service: "Kids play Session",
     scheduled: {
       day: "Thu,",
       date: "11 Jan 2024 ",
@@ -117,7 +117,7 @@ export const tableData = [
     status: "inactive",
     email: "abe@gmail.com",
     phone: "+966559186881",
-    service: "Group Language Session",
+    service: "Fitness Session",
     scheduled: {
       day: "Fri,",
       date: "12 Jan 2024 ",
@@ -151,7 +151,7 @@ export const tableData = [
     status: "active",
     email: "cameron@gmail.com",
     phone: "+966559186883",
-    service: "Group Language Session",
+    service: "Exercise Session",
     scheduled: {
       day: "Sun,",
       date: "14 Jan 2024 ",
@@ -185,7 +185,7 @@ export const tableData = [
     status: "lead",
     email: "sloane@gmail.com",
     phone: "+966559186885",
-    service: "Group Language Session",
+    service: "Kids play Session",
     scheduled: {
       day: "Tue,",
       date: "16 Jan 2024 ",
@@ -219,7 +219,7 @@ export const tableData = [
     status: "inactive",
     email: "grace@gmail.com",
     phone: "+966559186887",
-    service: "Group Language Session",
+    service: "Fitness Session",
     scheduled: {
       day: "Thu,",
       date: "18 Jan 2024 ",
@@ -253,7 +253,7 @@ export const tableData = [
     status: "active",
     email: "katie@gmail.com",
     phone: "+966559186889",
-    service: "Group Language Session",
+    service: "Kids play Session",
     scheduled: {
       day: "Sat,",
       date: "20 Jan 2024 ",
@@ -287,7 +287,7 @@ export const tableData = [
     status: "lead",
     email: "boy@gmail.com",
     phone: "+966559186891",
-    service: "Group Language Session",
+    service: "Exercise Session",
     scheduled: {
       day: "Mon,",
       date: "22 Jan 2024 ",
@@ -321,7 +321,7 @@ export const tableData = [
     status: "inactive",
     email: "flower@gmail.com",
     phone: "+966559186893",
-    service: "Group Language Session",
+    service: "Fitness Session",
     scheduled: {
       day: "Wed,",
       date: "24 Jan 2024 ",
@@ -355,7 +355,7 @@ export const tableData = [
     status: "active",
     email: "motorist@gmail.com",
     phone: "+966559186895",
-    service: "Group Language Session",
+    service: "Fitness Session",
     scheduled: {
       day: "Fri,",
       date: "26 Jan 2024 ",

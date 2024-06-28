@@ -1,17 +1,36 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Button from "./shared/Button";
 import { editbox, editboxDefault } from "@/constants";
 import { useForm } from "react-hook-form";
 import { nanoid } from "nanoid";
 
-const EditColumn = () => {
+const EditColumn = ({ setIsEditOpen }: { setIsEditOpen: any }) => {
+  const editBoxRef = useRef<HTMLElement>(null);
   const { register } = useForm({
     defaultValues: editboxDefault,
   });
+  useEffect(() => {
+    const handleEditBox = (event: MouseEvent) => {
+      if (
+        editBoxRef.current &&
+        !editBoxRef.current.contains(event.target as Node)
+      ) {
+        setIsEditOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleEditBox);
+    // CLEAN UP
+    return () => {
+      document.removeEventListener("mousedown", handleEditBox);
+    };
+  });
 
   return (
-    <section className="w-[320px] h-[472px] shadow-lg bg-white top-28 right-0 z-50 flex flex-col  border border-gray-100 rounded-md p-4 absolute">
+    <section
+      ref={editBoxRef}
+      className="w-[320px] h-[472px] shadow-lg bg-white top-28 right-0 z-50 flex flex-col  border border-gray-100 rounded-md p-4 absolute"
+    >
       <div>
         <h4 className="medium-16 text-black">Edit Columns</h4>
         <h5 className="regular-14 text-gray-400 mt-2">
@@ -40,7 +59,13 @@ const EditColumn = () => {
       </form>
       <div className="grid grid-cols-2 gap-3 pt-4 ">
         <Button value="Reset to Default" varient="btn-white" />
-        <Button value="Apply" varient="btn-black" />
+        <Button
+          value="Apply"
+          varient="btn-black"
+          fn={() => {
+            setIsEditOpen(false);
+          }}
+        />
       </div>
     </section>
   );

@@ -2,18 +2,36 @@
 import { filterboxNav } from "@/constants";
 import { nanoid } from "nanoid";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import Button from "./shared/Button";
 import SheduledDate from "./SheduledDate";
 import People from "./People";
 import Service from "./Service";
 
-const FilteTable = () => {
+const FilteTable = ({ setfilterOpen }: { setfilterOpen: any }) => {
   const [selected, setSelected] = useState("Scheduled Date");
+  const filterTableRef = useRef<HTMLElement>(null);
+  useEffect(() => {
+    const handleFilterTalbe = (event: MouseEvent) => {
+      if (
+        filterTableRef.current &&
+        !filterTableRef.current.contains(event.target as Node)
+      ) {
+        setfilterOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleFilterTalbe);
+    return () => {
+      document.removeEventListener("mousedown", handleFilterTalbe);
+    };
+  });
 
   return (
-    <section className="absolute z-50 border top-28 border-gray-100 rounded-md w-[672px]  bg-red-200 shadow-lg flex flex-col">
+    <section
+      ref={filterTableRef}
+      className="absolute z-50 border top-28 border-gray-100 rounded-md w-[672px]  bg-red-200 shadow-lg flex flex-col"
+    >
       <div className="h-[348px] flex ">
         <div className="max-w-[230px] border-r border-gray-100  w-full bg-blue-50 h-full p-2">
           <ul className="w-full ">
@@ -50,7 +68,13 @@ const FilteTable = () => {
       <div className="h-[52px] border-t border-gray-100 bg-white flexEnd py-2">
         <div className="h-full flexBetween medium-14 gap-4 mr-4">
           <Button value="Reset Default" varient="btn-gray" />
-          <Button value="Apply" varient="btn-black" />
+          <Button
+            value="Apply"
+            varient="btn-black"
+            fn={() => {
+              setfilterOpen(false);
+            }}
+          />
         </div>
       </div>
     </section>
